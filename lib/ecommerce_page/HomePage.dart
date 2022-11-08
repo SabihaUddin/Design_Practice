@@ -1,7 +1,10 @@
+
+
 import 'package:design_learn/constant/ItemCard.dart';
 import 'package:design_learn/constant/color_constant.dart';
 import 'package:design_learn/ecommerce_page/details_page/details_design.dart';
-import 'package:design_learn/product_models.dart';
+import 'package:design_learn/ecommerce_page/product_list/product_model.dart';
+
 import 'package:flutter/material.dart';
 
 import '../constant/categories.dart';
@@ -31,20 +34,20 @@ class HomePage extends StatelessWidget {
           SizedBox(height:20 ,),
           Expanded(
               child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin ),
-            child: GridView.builder(
-                itemCount: products.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: kDefaultPaddin,
-                    crossAxisSpacing: kDefaultPaddin,
-                    childAspectRatio: .75),
-                itemBuilder: (context, index) => ItemCard(
+                padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin ),
+                child: GridView.builder(
+                    itemCount: products.length,
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: kDefaultPaddin,
+                        crossAxisSpacing: kDefaultPaddin,
+                        childAspectRatio: .73),
+                    itemBuilder: (context, index) => ItemCard(
                       products: products[index],
                       press: () => Navigator.push(
                           context, MaterialPageRoute(builder: (context)=>DetailsPage())),
                     )),
-          ))
+              ))
         ],
       ),
     );
